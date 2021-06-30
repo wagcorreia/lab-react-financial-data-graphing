@@ -8,10 +8,6 @@ function App() {
   return (
     <div className="container mt-5">
       <Chart />
-
-      {/* <BrowserRouter>
-        <Route path="/" component={Chart} />
-      </BrowserRouter> */}
     </div>
   )
 }

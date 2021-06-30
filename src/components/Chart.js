@@ -6,13 +6,14 @@ class ChartComponent extends Component {
   state = {
     stockPrices: [],
   }
+
   componentDidMount = () => {
     axios
-      .get(`https://api.coindesk.com/v1/bpi/historical/close.json`)
+      .get(`http://api.coindesk.com/v1/bpi/historical/close.json`)
       .then((response) => {
-        // console.log(response)
         let prices = response.data.bpi
-        this.setState({ strockPrices: { ...prices } })
+        console.log(prices)
+        this.setState({ stockPrices: { ...prices } })
       })
       .catch((err) => {
         console.log(err)
@@ -26,8 +27,8 @@ class ChartComponent extends Component {
         labels: Object.keys(this.state.stockPrices),
         datasets: [
           {
-            label: 'Bitcoin Price Index',
-            backgroundcolor: 'rgba(235, 99, 132, 0.2)',
+            label: 'Bitcoin value',
+            backgroundColor: 'rgba(235, 99, 132, 0.3)',
             borderColor: 'rgb(255, 99, 132)',
             data: Object.values(this.state.stockPrices),
             fill: true,
