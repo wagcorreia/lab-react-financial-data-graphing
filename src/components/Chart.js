@@ -27,8 +27,8 @@ class ChartComponent extends Component {
         labels: Object.keys(this.state.stockPrices),
         datasets: [
           {
-            label: 'Bitcoin value',
-            backgroundColor: 'rgba(235, 99, 132, 0.3)',
+            label: 'Bitcoin Price Index',
+            backgroundColor: 'rgba(235, 99, 132, 0.5)',
             borderColor: 'rgb(255, 99, 132)',
             data: Object.values(this.state.stockPrices),
             fill: true,
@@ -41,6 +41,9 @@ class ChartComponent extends Component {
   render() {
     return (
       <div>
+        <input type="date"></input>
+        <input type="date"></input>
+        <button>Search</button>
         <canvas id="myChart"></canvas>
       </div>
     )
